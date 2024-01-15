@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
   get '/' => 'homes#top' 
-  get '/index' => 'lists#index'
-  get '/new' => 'lists#new'
-  post 'lists' => 'lists#create'
-  
- 
-  get 'lists/show'
-  get 'lists/edit'
-  
+  get 'books/index'
+  get '/new' => 'books#new'
+  post 'books' => 'books#create'
+  get 'books/:id' => 'books#show', as: 'book'
+  get 'books/:id/edit' => 'books#edit', as: 'edit_book'
+  patch 'books/:id' => 'books#update', as: 'update_book'
+  delete 'books/:id' => 'books#destroy', as: 'destroy_book'
   
   #基本： get '/top' => 'homes#top'
   #最後「resources」method
