@@ -1,5 +1,9 @@
 <h1>Editing Book</h1>
 
+<div>
+  <%= flash[:notice] %>
+</div
+
 <%= form_with model: @book, url: update_book_path(@book.id),method: :patch do |f| %>
 
   <h4>Title</h4>
